@@ -1,0 +1,22 @@
+[profile.default]
+src = "."
+test = "."
+out = "out"
+libs = ["../lib"]
+solc = "0.8.24"
+optimizer = true
+optimizer_runs = 200
+remappings = [
+    "@openzeppelin/=../lib/openzeppelin-contracts/",
+    "forge-std/=../lib/forge-std/src/",
+    "@base/=../src/",
+]
+
+[fuzz]
+runs = 256
+
+# The solc linter resolves forge-std's internal imports against this project's
+# remappings and trips on the parent-relative `libs`. It is noise here, so keep
+# it off the build path; `forge build` and `forge test` stay green.
+[lint]
+lint_on_build = false

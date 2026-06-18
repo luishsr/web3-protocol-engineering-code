@@ -1,0 +1,28 @@
+# ---- EVM / Foundry ----
+**/out/
+**/cache/
+**/broadcast/
+# Foundry dependencies are fetched with `forge install`
+evm/**/lib/
+
+# ---- Solana / Anchor ----
+**/target/
+.anchor/
+test-ledger/
+**/*.so
+ledger/
+
+# ---- JS / Node ----
+node_modules/
+**/node_modules/
+yarn-error.log
+npm-debug.log*
+.pnp.*
+
+# ---- misc ----
+.DS_Store
+.env
+.env.*
+*.log
+.idea/
+.vscode/
